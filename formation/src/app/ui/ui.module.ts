@@ -4,16 +4,25 @@ import { UiComponent } from './containers/ui/ui.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ListPrestationsComponent } from '../prestations/list-prestations/list-prestations.component';
+import { PrestationsModule } from '../prestations/prestations.module';
+
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule, PrestationsModule
   ],
   declarations: [
     UiComponent,
     HeaderComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    ListPrestationsComponent,
+
+
+
   ],
   exports:
   [UiComponent]

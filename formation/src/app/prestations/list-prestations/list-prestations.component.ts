@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Prestation } from '../../shared/models/prestation';
+import { PrestationsService } from '../services/prestations.service';
+import { State } from '../../shared/enums/state.enum';
 
 @Component({
   selector: 'app-list-prestations',
@@ -6,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-prestations.component.scss']
 })
 export class ListPrestationsComponent implements OnInit {
-  public first: string;
-  constructor() {
-    this.first = 'Hello ';
+  public collection: Prestation[];
+  public states = Object.values(State);
+
+  constructor(private prestationService: PrestationsService) {
    }
 
   ngOnInit() {
+    this.collection = this.prestationService.collection;
   }
-
 }

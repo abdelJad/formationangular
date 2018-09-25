@@ -7,6 +7,8 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './app-routing.module';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     UiModule,
+    NgbModule.forRoot(),
+    AppRoutingModule,
     LoginModule,
-    PageNotFoundModule,
-    NgbModule.forRoot()
+    PageNotFoundModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(router: Router) {
+    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+  }
+
+}

@@ -1,29 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { UiComponent } from './containers/ui/ui.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ListPrestationsComponent } from '../prestations/list-prestations/list-prestations.component';
-import { PrestationsModule } from '../prestations/prestations.module';
+
+
+
 
 
 @NgModule({
   imports: [
     CommonModule,
-    FontAwesomeModule, PrestationsModule
+    FontAwesomeModule,
+     RouterModule
   ],
   declarations: [
     UiComponent,
     HeaderComponent,
     NavComponent,
-    FooterComponent,
-    ListPrestationsComponent,
-
-
-
-  ],
+    FooterComponent
+],
   exports:
   [UiComponent]
 })

@@ -1,19 +1,35 @@
-<div class="table-responsive">
+<app-tableau [headers]="listHeader" [addRow]="row">
+  <app-prestation *ngFor="let presta of collection" [item]="presta" ></app-prestation>
+  <app-btn-tab [addRow] ="row"></app-btn-tab>
+</app-tableau>
+
+<!--
+  <a routerLink ="prestations/add" >
+    <fa-icon [icon]="faPlusCircle"></fa-icon>
+    Ajouter une prestation
+  </a> -->
+
+
+
+
+
+<!-- <div class="table-responsive">
 <table class="table">
     <thead class="thead-dark">
       <tr>
         <th scope="col" *ngFor="let item of headers">{{item}}</th>
        </tr>
     </thead>
+
     <tbody>
       <ng-container *ngFor="let presta of collection">
         <app-prestation [item]="presta" ></app-prestation>
       </ng-container>
-     <!-- <tr *ngFor="let presta of collection"></tr> -->
+      <tr *ngFor="let presta of collection"></tr> -->
 
-        <!--<tr app-prestation [item]="presta" *ngFor="let item of collection"> -->
+        <!--<tr app-prestation [item]="presta" *ngFor="let item of collection">
 
 
     </tbody>
   </table>
-</div>
+</div> -->

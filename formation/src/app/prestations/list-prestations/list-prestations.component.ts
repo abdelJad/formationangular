@@ -12,10 +12,13 @@ export class ListPrestationsComponent implements OnInit {
   public collection: Prestation[];
   public states = Object.values(State);
 
+  public headers: string [];
+
   constructor(private prestationService: PrestationsService) {
    }
 
   ngOnInit() {
     this.collection = this.prestationService.collection;
-  }
+    this.headers =  ['Type', 'Client', 'Nb_jours', 'Tj_ HT', 'Total_HT', 'Total_TTC', 'Action'];
+ }
 }

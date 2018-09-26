@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
  public faUser = faUsers;
 
   constructor() {
-    this.title  = 'Hello Angular';
+    this.title  = 'Formation Angular ';
   }
 
   ngOnInit() {

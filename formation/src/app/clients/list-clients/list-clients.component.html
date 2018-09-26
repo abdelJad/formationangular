@@ -1,0 +1,5 @@
+<app-tableau [headers]="listHeader" [addRow]="row">
+    <app-client *ngFor="let client of collection" [item] = "client" ></app-client>
+    <app-btn-tab [addRow] ="row"></app-btn-tab>
+</app-tableau>
+

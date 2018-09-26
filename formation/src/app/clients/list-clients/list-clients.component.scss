@@ -1,0 +1,10 @@
+@import "~src/variables";
+
+app-client {
+ //display: table-row;
+ display: contents;
+}
+ fa-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }

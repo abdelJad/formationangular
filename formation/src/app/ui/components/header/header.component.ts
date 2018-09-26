@@ -11,12 +11,17 @@ export class HeaderComponent implements OnInit {
  public title: string;
  public faBars = faBars;
  public faUser = faUsers;
+ public open = true;
 
   constructor() {
     this.title  = 'Formation Angular ';
   }
 
   ngOnInit() {
+  }
+
+  public toogle() {
+    this.open = !this.open;
   }
 
 }

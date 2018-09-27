@@ -14,8 +14,8 @@ import { Observable, Subscription } from 'rxjs';
 export class ListPrestationsComponent implements OnInit , OnDestroy {
 
 
-    public collection: Prestation[];
-  //public collection: Observable<Prestation[]>;
+    //public collection: Prestation[];
+   public collection: Observable<Prestation[]>;
 
 
   public states = Object.values(State);
@@ -30,13 +30,13 @@ export class ListPrestationsComponent implements OnInit , OnDestroy {
    }
 
   ngOnInit() {
-    //this.collection = this.prestationService.collection;
+    this.collection = this.prestationService.collection;
 
 
 
-    this.sub = this.prestationService.collection.subscribe((data) => {
-      this.collection = data;
-    });
+    // this.sub = this.prestationService.collection.subscribe((data) => {
+    //   this.collection = data;
+    // });
     this.listHeader =  ['Type', 'Client', 'Nb_jours', 'Tj_ HT', 'Total_HT', 'Total_TTC', 'Action'];
     this.row = {
       route: 'add',
@@ -48,7 +48,7 @@ export class ListPrestationsComponent implements OnInit , OnDestroy {
 
  }
  ngOnDestroy(): void {
-  this.sub.unsubscribe();
+  //this.sub.unsubscribe();
 }
 
 

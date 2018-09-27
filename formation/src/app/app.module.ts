@@ -18,6 +18,8 @@ import localeFr from '@angular/common/locales/fr';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment.firebase';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -36,7 +38,8 @@ registerLocaleData(localeFr, 'fr');
     AngularFirestoreModule,
     AppRoutingModule,
     LoginModule,
-    PageNotFoundModule
+    PageNotFoundModule,
+    HttpClientModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'fr' } ],
   bootstrap: [AppComponent]

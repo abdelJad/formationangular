@@ -1,5 +1,5 @@
 <app-tableau [headers]="listHeader" [addRow]="row">
-  <app-prestation *ngFor="let presta of collection" [item]="presta" ></app-prestation>
+  <app-prestation *ngFor="let presta of collection | async" [item]="presta" ></app-prestation>
   <app-btn-tab [addRow] ="row"></app-btn-tab>
 </app-tableau>
 

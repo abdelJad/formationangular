@@ -18,7 +18,10 @@ export class PrestationComponent implements OnInit {
   public changeState(e) {
     console.log(e.target.value);
     const state = e.target.value;
-    this.prestationServices.update(this.item, state);
+    this.prestationServices.update(this.item, state).then((date) => {
+      console.log('then .... traitement à faire');
+
+    });
   }
 
 }

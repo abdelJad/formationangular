@@ -1,0 +1,40 @@
+<div class="container">
+    <form novalidate  (ngSubmit)="process()" [formGroup]="form">
+
+      <div class="form-group">
+        <label for="type">Type</label>
+        <input  type="text" class="form-control" id="type" formControlName="type_presta">
+
+      </div>
+
+      <div class="form-group">
+        <label for="client">Client</label>
+        <input  type="text" class="form-control" id="client" formControlName="client" >
+
+      </div>
+
+      <div class="form-group">
+        <label for="nbjour">Nb jour</label>
+        <input  type="number" class="form-control" id="nbjour" formControlName="nb_jours" >
+      </div>
+
+      <div class="form-group">
+        <label for="tjm_ht">Tjm_ht</label>
+        <input type="number" class="form-control" id="tjmht" formControlName="tjm_ht">
+      </div>
+
+      <div class="form-group">
+        <label for="tva">Taux tva</label>
+        <input  type="number" class="form-control" id="tva" formControlName="taux_tva">
+      </div>
+
+      <div class="form-group">
+        <label for="state">Action</label>
+        <select formControlName="state" class="form-control" id="state">
+            <option [value]="state" *ngFor="let state of states">{{ state }}</option>
+          </select>
+      </div>
+
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>

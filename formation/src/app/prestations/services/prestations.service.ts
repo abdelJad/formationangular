@@ -33,6 +33,10 @@ export class PrestationsService {
      item.state = state;
    }
 
+   public add(item: Prestation): void {
+     this.collection.push(item);
+   }
+
 
 
 

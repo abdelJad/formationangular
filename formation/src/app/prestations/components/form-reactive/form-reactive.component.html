@@ -4,13 +4,13 @@
       <div class="form-group">
         <label for="type">Type</label>
         <input  type="text" class="form-control" id="type" formControlName="type_presta">
-
+        <div class="alert alert-danger" *ngIf="isError('type_presta')" >champ invalid</div>
       </div>
 
       <div class="form-group">
         <label for="client">Client</label>
         <input  type="text" class="form-control" id="client" formControlName="client" >
-
+        <div class="alert alert-danger" *ngIf="isError('client')">champ invalid</div>
       </div>
 
       <div class="form-group">

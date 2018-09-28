@@ -37,7 +37,7 @@ export class ListPrestationsComponent implements OnInit , OnDestroy {
     // this.sub = this.prestationService.collection.subscribe((data) => {
     //   this.collection = data;
     // });
-    this.listHeader =  ['Type', 'Client', 'Nb_jours', 'Tj_ HT', 'Total_HT', 'Total_TTC', 'Action'];
+    this.listHeader =  ['Type', 'Client', 'Nb_jours', 'Tj_ HT', 'Total_HT', 'Total_TTC', 'Action','Delete'];
     this.row = {
       route: 'add',
       icon: faPlusCircle,

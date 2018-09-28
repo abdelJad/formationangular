@@ -10,9 +10,16 @@
   </div>
 
   <div>
-    <span>
-        <fa-icon [icon]="faUser"></fa-icon>
-    </span>
+  <span *ngIf="( log$ | async) ==='login'; else other_content">
+     {{user}}
+     <button (click)="logout()">logout</button>
+  </span>
+  <ng-template #other_content>
+      <button (click)="login()">login</button>
+  </ng-template>
+  <span>
+      <fa-icon [icon]="faUser"></fa-icon>
+  </span>
   </div>
 
 </div>

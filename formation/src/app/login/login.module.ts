@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './containers/login/login.component';
 import { LoginRoutingModule } from './login-routing.module';
+import { LoginService } from '../prestations/services/login.service';
 
 @NgModule({
   imports: [
@@ -10,4 +11,9 @@ import { LoginRoutingModule } from './login-routing.module';
   ],
   declarations: [LoginComponent]
 })
-export class LoginModule { }
+export class LoginModule {
+
+  constructor(private loginService: LoginService) {
+
+  }
+}

@@ -9,6 +9,7 @@ import { AddPrestationComponent } from './containers/add-prestation/add-prestati
 import { FormComponent } from './components/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormReactiveComponent } from './components/form-reactive/form-reactive.component';
+import { EditPrestationComponent } from './containers/edit-prestation/edit-prestation.component';
 
 
 @NgModule({
@@ -22,8 +23,10 @@ import { FormReactiveComponent } from './components/form-reactive/form-reactive.
 
 
   ],
-  declarations: [ListPrestationsComponent, PrestationComponent, AddPrestationComponent, FormComponent, FormReactiveComponent],
-  exports : [ListPrestationsComponent]
+  declarations: [ListPrestationsComponent, PrestationComponent, AddPrestationComponent, FormComponent,
+     FormReactiveComponent, EditPrestationComponent],
+  exports : [ListPrestationsComponent, EditPrestationComponent]
 })
+
 export class PrestationsModule { }
 

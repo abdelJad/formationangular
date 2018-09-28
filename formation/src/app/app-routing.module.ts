@@ -12,6 +12,7 @@ const appRoutes: Routes = [
   { path: 'clients',
     loadChildren: './clients/clients.module#ClientsModule',
   },
+
   { path: 'add',
   redirectTo: '/login',
   pathMatch: 'full'

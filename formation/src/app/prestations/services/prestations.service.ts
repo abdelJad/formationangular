@@ -3,7 +3,7 @@ import { Prestation } from '../../shared/models/prestation';
 import { fakePrestations } from './fakeprestations';
 import { State } from '../../shared/enums/state.enum';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
@@ -14,6 +14,7 @@ import { HttpClient } from '@angular/common/http';
 export class PrestationsService {
   private itemsCollection: AngularFirestoreCollection<Prestation>;
   private _collection: Observable<Prestation[]>;
+  public msg$ = new Subject(); // creation observable
 
   constructor(private afs: AngularFirestore, private http: HttpClient) {
     this.itemsCollection = afs.collection<Prestation>('prestaions');
@@ -50,12 +51,12 @@ export class PrestationsService {
 
     // add presta
   add(item: Prestation): Promise<any> {
-    // const id = this.afs.createId();
-    // const prestation = { id, ...item };
-    // return this.itemsCollection.doc(id).set(prestation).catch((e) => {
-    //   console.log(e);
-    // });
-     return this.http.post('urlapi/prestations', item);
+     const id = this.afs.createId();
+     const prestation = { id, ...item };
+     return this.itemsCollection.doc(id).set(prestation).catch((e) => {
+       console.log(e);
+     });
+    // return this.http.post('urlapi/prestations', item);
   }
 
 
@@ -76,6 +77,10 @@ export class PrestationsService {
       console.log(e);
     });
     // return this.http.delete(`urlapi/prestations/${item.id}`);
+  }
+
+  public getPrestation(id: string) {
+    return this.itemsCollection.doc(id).get();
   }
 
 
